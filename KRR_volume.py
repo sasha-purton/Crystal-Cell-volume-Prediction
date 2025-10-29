@@ -25,7 +25,7 @@ def get_learning_curve(data, model, kf, filename='test', trials=20):
         mean_errors.append(-np.mean(mae_scores))
         std_errors.append(np.std(mae_scores))
 
-    np.savetxt("/home/sasha/Desktop/AC/"+ filename + ".txt",
+    np.savetxt("directory"+ filename + ".txt",
             np.column_stack([training_sizes, mean_errors, std_errors]),
             header="train_size mean_mae std_mae")
     return training_sizes, mean_errors, std_errors
@@ -47,7 +47,7 @@ def plot_learning_curve(training_sizes, mean_errors, std_errors, title, filename
     plt.xlabel("Training Size")
     plt.ylabel("Error")
     plt.tight_layout()
-    plt.savefig("/home/sasha/Desktop/AC/" + filename + ".png")
+    plt.savefig("directory" + filename + ".png")
     plt.show()
 
 
